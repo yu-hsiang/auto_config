@@ -1,0 +1,38 @@
+%1 show the system specs
+#
+#show sys specs
+#
+ter len 0
+show version
+show ip int bri
+show ip route
+show diag
+show env all
+end
+%2 set up interfaces
+#
+#set interface
+#
+conf t
+int gi0/5
+service instance 200 ethernet
+encapsulation untagged
+bridge-domain 200
+no shutdown
+int vlan 200
+ip add 10.0.1.1 255.255.255.0
+no shutdown
+end
+#
+%3 config ospf
+#
+#set ospf
+#
+conf t
+router ospf 1
+router-id 1.1.1.1
+network 10.0.0.0 0.0.0.255 area 0
+network 10.0.1.0 0.0.0.255 area 0
+end
+#
+exit
