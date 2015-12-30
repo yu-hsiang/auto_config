@@ -46,6 +46,8 @@ class automation(object):
                 print self.D[q1]['content']
                 tn.write(self.D[q1]['content'])
                 output = tn.read_until(b"end\n").encode('ascii')
+                with open("output.txt", "a") as f:
+                    f.write(output)
                 print "OUTPUT\n", output
                 
                 self.interact(tn)
@@ -145,17 +147,6 @@ if __name__ == "__main__":
             print "*Ths second argument is not a host address!*"
             print "\n********************************************\n"
             sys.exit()
-        
-        '''
-        try:
-            socket.inet_aton(sys.argv[2])
-            HOST = sys.argv[2]
-        except IOError:
-            print "\n********************************************\n"
-            print "*Ths second argument is not a host address!*"
-            print "\n********************************************\n"
-            sys.exit()
-        '''
         
         if sys.argv[1].endswith(".txt"):
             script = sys.argv[1]
