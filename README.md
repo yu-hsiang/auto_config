@@ -1,6 +1,5 @@
 # auto_config
 
-
 A auto configuration tool for cisco IOS.
 
 (1)How to use
@@ -14,3 +13,7 @@ A auto configuration tool for cisco IOS.
 (3)the problem I am working on
 
 the version can't display a long "show" command respectively. Some output is missing.
+
+#cmd_prompt
+
+using cmd module to implement the User interface, instead of the telnetlib module. This one is still testing and the feature will added into auto_config version 2.
