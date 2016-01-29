@@ -51,11 +51,7 @@ class myprompt(cmd.Cmd):
                 else:
                     content +=  line
             D.update({key: {'title': title, 'content': content}})
-    
-        #print "key: ", key
-        #print "content:\n", content
 
-        #print json.dumps(D, sort_keys=True, indent = 3, separators=(',', ':'))
         print "***************************************\n"
         print "You have th following procedure: "
         print "***************************************"
